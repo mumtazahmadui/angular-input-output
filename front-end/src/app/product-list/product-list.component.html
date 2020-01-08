@@ -1,0 +1,30 @@
+<table class="table table-sm table-bordered">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Status</th>
+        <th>Backup</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let list of listData; let i = index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{list.name}}</td>
+        <td class="{{addClass(list.status)}}">
+          <i *ngIf="list.status" class="fa fa-circle {{addClass(list.status)}}"></i> {{list.status}}
+        </td>
+        <td> <span class="badge badge-{{addBageClass(list.backup)}}">
+            <ng-container *ngIf="list.backup === true else notActive">Activated</ng-container>
+            <ng-template #notActive>Not activated</ng-template>
+          </span> </td>
+          <td>
+            <button class="btn btn-sm btn-secondary" (click)="currentProject(list)">Details</button>
+          </td>
+      </tr>
+     
+    </tbody>
+  </table>
+
+<product-detail [selectedProject]="projects"></product-detail>
