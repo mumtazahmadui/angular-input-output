@@ -1,0 +1,20 @@
+{
+  "projects": [
+    {
+      "id": "1",
+      "name": "Project Two",
+      "details": "This is a sample project",
+      "status": true,
+      "backups": false,
+      "productId": "1"
+    },
+    {
+      "id": "2",
+      "name": "Project Two",
+      "details": "This is a second project",
+      "status": false,
+      "backups": true,
+      "productId": "2"
+    }
+  ]
+}
